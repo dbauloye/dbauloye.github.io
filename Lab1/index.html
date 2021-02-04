@@ -60,9 +60,8 @@
 	L.polygon([
 		[40.819803, -96.703767],
 		[40.819588, -96.703767],
-		[40.819803, -96.703247],
-		[40.819670, -96.703043],
-		[40.819588, -96.703247]
+		[40.819588, -96.703247],
+		[40.819803, -96.703247]
 	]).addTo(mymap).bindPopup("I am a pentagon.");
 	//(14)three nodes - the above code is drawing is a triangle... you can add more nodes to the polygon by separating each with a comma
 
@@ -82,6 +81,8 @@
         "coordinates": [-96.702572, 40.817804]
     }
 };
+	L.marker([40.819273, -96.702968]).addTo(LoveLibrary)
+		.bindPopup("<b>Love Library!</b><br />Hello!.").openPopup();
 
 //(16) you can also comment out mapped items if you do not want them to draw. note that the var reference above is still present but below i have turned off a layer
 //	L.geoJSON(LoveLibrary,{}).addTo(mymap);
