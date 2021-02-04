@@ -6,7 +6,7 @@
 	
 	<!-- (2) Notice how you can use the left angle bracket, exclamation and dashes to break the code and leave comments, 
 	but always make sure to close with two dashes and right angle bracket -->
-	<title>Quick Start - Leaflet</title>
+	<title>Daniel Bauloye</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,7 @@
 
 
 <!-- (5) a "div" is like a window; you're basically telling the browser to make a container here, size 600 by 400 -->
-<div id="mapid" style="width: 800px; height: 600px;"></div>
+<div id="mapid" style="width: 1200px; height: 1000px;"></div>
 
 <script>
 //(6) when you are outside of the head and outside of functions, you can use just two slashes to leave single-line comments like this and you don't need to close
@@ -35,25 +35,25 @@
 //    you could actually name this anything "mymap," "kevin," "hammercheese," et cetera, as long as you call it up the same way each time throughout the code
 //(8) note that you might also see "const" used to identify variables in code, when you want a CONSTANT variable. Functionally, these will tend to work similarly in our work.
 // (9) here you define the longitude, latitude, and zoom level of the user map when they load the page, then follow with the tile layer you want (here it is mapbox)
+	var mymap = L.map('mapid').setView([42.809273, -96.702968], 16);
+	L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+		maxZoom: 18,
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(mymap);;
 	
-	
-	var mymap = L.map('mapid').setView([40.819273, -96.702968], 16);
-	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		maxZoom: 19,
-		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors '
-	}).addTo(mymap);
+
 //(10) right above here, you see you're adding this tileset and setting the max zoom level of "mymap" 
 
 //(11) this is how you define individual features on the map - a marker, a cirlce, a polygon. You could also call up a variable and point it to a hosted GIS file to load it in.
 //(12) note that each popup has preloaded text here. You could also have a variable that points attributes in a dataset to populate a popup; we will do this in the future
 	L.marker([40.819273, -96.702968]).addTo(mymap)
-		.bindPopup("<b>Hello world!</b><br />I open automatically.").openPopup();
+		.bindPopup("<b>Love Library!</b><br />I open automatically.").openPopup();
 
-	L.circle([40.817, -96.71], 200, {
+	L.circle([40.8207, -96.7056], 200, {
 		color: 'green',
 		fillColor: '#f03',
 		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("I am a circle.");
+	}).addTo(mymap).bindPopup("This is Memorial Stadium.");
 	//(13)notice that you can set the color of the outline by using major color names, as well as the fill color with hex codes
 
 
