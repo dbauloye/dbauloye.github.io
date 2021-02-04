@@ -47,7 +47,10 @@
 //(11) this is how you define individual features on the map - a marker, a cirlce, a polygon. You could also call up a variable and point it to a hosted GIS file to load it in.
 //(12) note that each popup has preloaded text here. You could also have a variable that points attributes in a dataset to populate a popup; we will do this in the future
 	L.marker([40.819273, -96.702968]).addTo(mymap)
-		.bindPopup("<b>Love Library!</b><br />I open automatically.").openPopup();
+		.bindPopup("<b>Hello world!</b><br />I open automatically.").openPopup();
+	L.marker([40.8182, -96.7026]).addTo(LoveLibrary)
+		.bindPopup("<b>Love Library!</b><br />Hello!.").openPopup();
+
 
 	L.circle([40.8207, -96.7056], 160, {
 		color: 'green',
@@ -81,8 +84,6 @@
         "coordinates": [-96.702572, 40.817804]
     }
 };
-	L.marker([40.8182, -96.7026]).addTo(LoveLibrary)
-		.bindPopup("<b>Love Library!</b><br />Hello!.").openPopup();
 
 //(16) you can also comment out mapped items if you do not want them to draw. note that the var reference above is still present but below i have turned off a layer
 //	L.geoJSON(LoveLibrary,{}).addTo(mymap);
