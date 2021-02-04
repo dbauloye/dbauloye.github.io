@@ -79,14 +79,13 @@
     },
     "geometry": {
         "type": "Point",
-        "coordinates": [-96.702572, 40.817804]
+        "coordinates": [-96.70257719673272, 40.81824105355466]
     }
 };
 
 
 //(16) you can also comment out mapped items if you do not want them to draw. note that the var reference above is still present but below i have turned off a layer
-       L.geoJSON(LoveLibrary,{}).addTo(mymap);
-       L.marker([40.81824105355466, -96.70257719673272]).addTo(mymap)
+       L.geoJSON(LoveLibrary,{}).addTo(mymap)
 		.bindPopup("<b>Love Library</b><br />This is a Library.").openPopup();
 
 //(17) think about how you would write some pop up text into your Love Library layer. Look at how it is done above. Read online help. Ask your neighbor. There are multiple approaches!
