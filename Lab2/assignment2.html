@@ -160,7 +160,7 @@
             "China Provinces ": provinces
 
 };
-        var layercontrol = L.control.layers(base, over, {collapsed:false}).addTo(map);
+L.control.layers(base, over, {collapsed:false}).addTo(map);
   
             
         var legend = L.control({position: 'bottomleft'}); // Try the other lower corner if you prefer.
@@ -218,7 +218,6 @@
  
             
             var provinces = new L.geoJson(provinces, {style:style}).addTo(map);
-            var covidData = new L.geoJson(covidData).addTo(map);
             
             var minValue = 100;
             var minRadius = 5;
