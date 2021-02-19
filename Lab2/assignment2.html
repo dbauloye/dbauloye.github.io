@@ -128,7 +128,7 @@
 
 };
         var layercontrol = L.control.layers(base, over, {collapsed:false}).addTo(map);
-  var legend = L.control({position: 'bottomright'}); // Try the other lower corner if you prefer.
+  var legend = L.control({position: 'bottomleft'}); // Try the other lower corner if you prefer.
 
                     legend.onAdd = function (map) {
 
@@ -158,7 +158,7 @@
                   legend.addTo(map);
                         
                         
-             map.on('overlayremove', function(eventLayer){
+             map.on('overremove', function(eventLayer){
 
                     if (eventLayer.name == 'provinces'){ // We use the key/display name to refer to the layer
 
@@ -169,7 +169,7 @@
             });          
                         
             
-             map.on('overlayadd', function(eventLayer){
+             map.on('overadd', function(eventLayer){
 
                     if (eventLayer.name == 'provinces'){
 
