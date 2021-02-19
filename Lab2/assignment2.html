@@ -127,7 +127,7 @@
             "China Provinces ": provinces
 
 };
-           L.control.layers(base, overlay, {collapsed:false}).addTo(map);
+        var layercontrol = L.control.layers(base, overlay, {collapsed:false}).addTo(map);
   var legend = L.control({position: 'bottomright'}); // Try the other lower corner if you prefer.
 
                     legend.onAdd = function (map) {
@@ -226,7 +226,7 @@
 
             }     
 
-            var coviData = new L.geoJson(covidData, {
+            var covidData = new L.geoJson(covidData, {
 
                  pointToLayer: function(feature, ll){
 
