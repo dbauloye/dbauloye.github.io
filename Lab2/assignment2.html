@@ -19,7 +19,9 @@
         crossorigin=""></script>
 
         
-        <script src="https://YOURNAME.github.io/lab2/provinces.js"></script>
+        <script src="https://dbauloye.github.io/Lab2/provinces.js"></script>
+        
+        <script src="https://dbauloye.github.io/Lab2/coviddata.js"></script>
         
 
     </head>
@@ -89,9 +91,23 @@
 
         
            var provinces = L.geoJson(provinces).addTo(map);
-            
+           var coviddata = L.geoJson(coviddata).addTo(map);
            
-            
+           var base = {
+
+           "Light Canvas": canvas,
+
+           "Satellite Imagery": imagery
+
+};
+
+ 
+
+            var over = {
+
+            "China Provinces ": provinces
+
+};
            
             
         </script>
