@@ -192,7 +192,7 @@
 
                                           '#f2f0f7';
 
-            }
+            };
 
  
 
@@ -212,7 +212,7 @@
 
                 };
 
-            }
+            };
             
             var provinces = new L.geoJson(provinces, {style:style}).addTo(map);
             var covidData = new L.geoJson(covidData).addTo(map);
@@ -291,9 +291,8 @@
 
                    radius: calcRadius(feature.properties.covid)  
 
-            });
-
-        }              
+            })}
+          };         
         </script>
       
    </body>
