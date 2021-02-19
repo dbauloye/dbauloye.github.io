@@ -110,7 +110,7 @@
 
         
            var provinces = L.geoJson(provinces).addTo(map);
-           var coviddata = L.geoJson(covidData).addTo(map);
+           var covidData = L.geoJson(covidData).addTo(map);
            
            var base = {
 
@@ -136,7 +136,7 @@
 
             var div = L.DomUtil.create('div', 'legend'),
 
-                    grades = [0, 1000000, 2000000, 5000000, 10000000]; // break values to define the intervals of population - YOU WILL NEED TO MODIFY IT TO GET THE RIGHT LEGEND BREAKS
+                    grades = [0, 1000000, 2000000, 5000000, 10000000];
 
                     div.innerHTML = '<b>Population 2019 <br><br></b>';
    
@@ -215,7 +215,7 @@
             }
             
             var provinces = new L.geoJson(provinces, {style:style}).addTo(map);
-            var coviddata = new L.geoJson(coviddata).addTo(map);
+            var covidData = new L.geoJson(covidData).addTo(map);
             
             var minValue = 100;
             var minRadius = 5;
@@ -226,7 +226,7 @@
 
             }     
 
-            var coviddata = new L.geoJson(coviddata, {
+            var coviData = new L.geoJson(covidData, {
 
                  pointToLayer: function(feature, ll){
 
@@ -269,7 +269,7 @@
 
       };
                         
-          var coviddata = new L.geoJson(coviddata, {
+          var covidData = new L.geoJson(covidData, {
 
              onEachFeature : onEachFeature,
 
