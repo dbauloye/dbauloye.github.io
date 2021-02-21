@@ -142,8 +142,8 @@
                 };
 
             };       
-           var provinces = L.geoJson(provinces).addTo(map);
-           var covidData = L.geoJson(covidData).addTo(map);
+           var provinces = L.geoJSON(provinces).addTo(map);
+           var covidData = L.geoJSON(covidData).addTo(map);
            
            var base = {
 
@@ -217,7 +217,7 @@ L.control.layers(base, over, {collapsed:false}).addTo(map);
             
  
             
-            var provinces = new L.geoJson(provinces, {style:style}).addTo(map);
+            var provinces = new L.geoJSON(provinces, {style:style}).addTo(map);
             
             var minValue = 100;
             var minRadius = 5;
@@ -228,7 +228,7 @@ L.control.layers(base, over, {collapsed:false}).addTo(map);
 
             }     
 
-            var covidData = new L.geoJson(covidData, {
+            var covidData = new L.geoJSON(covidData, {
 
                  pointToLayer: function(feature, ll){
 
@@ -271,7 +271,7 @@ L.control.layers(base, over, {collapsed:false}).addTo(map);
 
       };
                         
-          var coviddata = new L.geoJson(covidData, {
+          var coviddata = new L.geoJSON(covidData, {
 
              onEachFeature : onEachFeature,
 
