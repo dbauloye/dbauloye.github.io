@@ -111,15 +111,15 @@
 
           function getColor(value) {
 
-                return value > 50000000 ? '#54278f':
+                return value > 50000000 ? '#fe441c':
 
-                       value > 25000000  ? '#756bb1':
+                       value > 25000000  ? '#ff7a5d':
 
-                       value > 10000000  ? '#9e9ac8':
+                       value > 10000000  ? '#ffa591':
 
-                       value > 5000000  ? '#cbc9e2':
+                       value > 5000000  ? '#ffc8bc':
 
-                                          '#f2f0f7';
+                                          '#fff5f3';
 
             };
 
@@ -142,8 +142,8 @@
                 };
 
             };       
-           var provinces = L.geoJSON(provinces).addTo(map);
-           var covidData = L.geoJSON(covidData).addTo(map);
+           var provinces = L.geoJson(provinces).addTo(map);
+           var covidData = L.geoJson(covidData).addTo(map);
            
            var base = {
 
@@ -195,9 +195,9 @@ L.control.layers(base, over, {collapsed:false}).addTo(map);
                         
              map.on('overremove', function(eventLayer){
 
-                    if (eventLayer.name == 'provinces'){ // We use the key/display name to refer to the layer
+                    if (eventLayer.name == 'provinces'){
 
-             map.removeControl(legend); // legend is the variable name of the layer legend
+             map.removeControl(legend);
 
               }
 
