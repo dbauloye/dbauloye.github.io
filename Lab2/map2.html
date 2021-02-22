@@ -66,22 +66,6 @@
               zoom: 5
 
 });
-
- 
-
-         L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}', {
-
-          attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-
-          subdomains: 'abcd',
-
-          minZoom: 0,
-
-          maxZoom: 20,
-
-          ext: 'png'
-
-}).addTo(map);
             
 
           var imagery = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
@@ -128,7 +112,7 @@
 
  
 
-          function kyle(feature){
+          function style(feature){
 
                 return {
 
@@ -145,10 +129,59 @@
                 };
 
 };       
-           
+
+         var onEachFeature = function(feature, layer) {
+
+                    if (feature.properties) {
+
+         var prop = feature.properties;
+         var popup = '<h3>'+prop['Location']+'</h3>'+'<br>Cases Day 1: '+prop['1']+'<br>Cases Day 16: '+prop['covid'];
+             feature.layer = layer;
+
+             layer.bindPopup(popup, {maxWidth: "auto"});
+
+        }
+
+      };        
             
-           var provinces = L.geoJson(provinces).addTo(map);
-           var covidData = L.geoJson(covidData).addTo(map);
+          var provinces = L.geoJSON(provinces, {style:style}).addTo(map);
+            
+            var minValue = 100;
+            var minRadius = 5;
+            
+            function calcRadius(val) {
+
+                 return 0.9 * Math.pow(val/minValue, .7) * minRadius;
+
+            }     
+
+            var covidData = L.geoJSON(covidData, {
+                
+                 onEachFeature : onEachFeature,
+
+                 pointToLayer: function(feature, ll){
+
+                 return L.circleMarker(ll, {
+
+                        color: '#000000',
+
+                        opacity: 1,
+
+                        weight: 2,
+
+                        fillColor: '#916a6a',
+
+                        fillOpacity: .5,
+
+                //radius: 10
+
+                        radius: calcRadius(feature.properties.covid)  
+
+            });
+
+        }
+
+}).addTo(map);
            
             
            var base = {
@@ -219,87 +252,6 @@
 
 });
                    
-            
- 
-            
-            var provinces = new L.geoJSON(provinces, {style:kyle}).addTo(map);
-            
-            var minValue = 100;
-            var minRadius = 5;
-            
-            function calcRadius(val) {
-
-                 return 0.9 * Math.pow(val/minValue, .7) * minRadius;
-
-            }     
-
-            var covidData = new L.geoJSON(covidData, {
-
-                 pointToLayer: function(feature, ll){
-
-                 return L.circleMarker(ll, {
-
-                        color: '#000000',
-
-                        opacity: 1,
-
-                        weight: 2,
-
-                        fillColor: '#916a6a',
-
-                        fillOpacity: .5,
-
-                //radius: 10
-
-                        radius: calcRadius(feature.properties.covid)  
-
-            });
-
-        }
-
-}).addTo(map);
-            
-            
-          
-            
-         var onEachFeature = function(feature, layer) {
-
-                    if (feature.properties) {
-
-         var prop = feature.properties;
-         var popup = '<h3>'+prop['Location']+'</h3>'+'<br>Cases Day 1: '+prop['1']+'<br>Cases Day 16: '+prop['covid'];
-             feature.layer = layer;
-
-             layer.bindPopup(popup, {maxWidth: "auto"});
-
-        }
-
-      };
-                        
-          var coviddata = new L.geoJSON(covidData, {
-
-             onEachFeature : onEachFeature,
-
-             pointToLayer : function(feature, ll){
-
-             return L.circleMarker(ll, {
-
-                   color: '#000000',
-
-                   opacity: 1,
-
-                   weight: 2,
-
-                   fillColor: '#808080',
-
-                   fillOpacity: .5,
-
-                //radius: 10
-
-                   radius: calcRadius(feature.properties.covid)  
-
-            })}
-          });         
         </script>
       
    </body>
