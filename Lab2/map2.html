@@ -40,7 +40,8 @@
 
               border-radius: 5px;
 
-          }
+}
+            
 
         </style>  
 
@@ -64,7 +65,7 @@
 
               zoom: 5
 
-          });
+});
 
  
 
@@ -81,8 +82,9 @@
           ext: 'png'
 
 }).addTo(map);
+            
 
-        var imagery = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
+          var imagery = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
 
           attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 
@@ -95,6 +97,7 @@
           ext: 'png'
 
 });
+            
           var canvas = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
 
           attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -107,7 +110,7 @@
 
           ext: 'png'
 
-}).addTo(map);
+          }).addTo(map);
 
           function getColor(value) {
 
@@ -121,7 +124,7 @@
 
                                           '#fff5f3';
 
-            };
+};
 
  
 
@@ -141,10 +144,13 @@
 
                 };
 
-            };       
+};       
+           
+            
            var provinces = L.geoJson(provinces).addTo(map);
            var covidData = L.geoJson(covidData).addTo(map);
            
+            
            var base = {
 
            "Light Canvas": canvas,
@@ -160,7 +166,8 @@
             "China Provinces ": provinces
 
 };
-L.control.layers(base, over, {collapsed:false}).addTo(map);
+            
+            L.control.layers(base, over, {collapsed:false}).addTo(map);
   
             
         var legend = L.control({position: 'bottomleft'}); // Try the other lower corner if you prefer.
@@ -175,7 +182,7 @@ L.control.layers(base, over, {collapsed:false}).addTo(map);
 
                     div.innerHTML = '<b>Population 2019 <br><br></b>';
    
-              for (var i = 0; i < grades.length; i++) {
+            for (var i = 0; i < grades.length; i++) {
 
                     div.innerHTML +=
 
@@ -183,14 +190,12 @@ L.control.layers(base, over, {collapsed:false}).addTo(map);
 
                         grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] +   '<br><br>' : '+');
 
-                  }
+                    }
 
- 
-
-                  return div;
-
-              };
-                  legend.addTo(map);
+                     return div;
+};
+  
+             legend.addTo(map);
                         
                         
              map.on('overremove', function(eventLayer){
@@ -201,7 +206,7 @@ L.control.layers(base, over, {collapsed:false}).addTo(map);
 
               }
 
-            });          
+});          
                         
             
              map.on('overadd', function(eventLayer){
@@ -212,7 +217,7 @@ L.control.layers(base, over, {collapsed:false}).addTo(map);
 
               }
 
-            });
+});
                    
             
  
