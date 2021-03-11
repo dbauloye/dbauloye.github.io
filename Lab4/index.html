@@ -6,9 +6,23 @@
 
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
 
-  <title>Lab 4 | YOUR NAME</title>
+  <title>Lab 4 | Daniel Bauloye</title>
 
-  <style> html, body, #viewDiv {padding: 0; margin: 0; height: 100%; width: 100%;} </style>
+  <style> 
+   
+   html, body, 
+   
+   #viewDiv {
+    
+    padding: 0; 
+    
+    margin: 0; 
+    
+    height: 100%; 
+    
+    width: 100%;} 
+  
+  </style>
 
  
 
@@ -94,12 +108,7 @@
 
         };
                            
-     
-        var featureLayer = new FeatureLayer({
-
-          url:"https://gisext.lincoln.ne.gov/arcgis/rest/services/Parks/Park_Boundaries/MapServer/0"
-
-         });  
+    
        
               
         const url = "https://opendata.arcgis.com/datasets/5aa5f17d117f409d8608ec1bf6de06d6_0.geojson";
@@ -122,8 +131,15 @@
 
         }); 
               
-     
-        var map = new Map({
+       
+        var featureLayer = new FeatureLayer({
+
+          url:"https://gisext.lincoln.ne.gov/arcgis/rest/services/Parks/Park_Boundaries/MapServer/0"
+
+         });       
+       
+       
+       var map = new Map({
 
           layers: [thebasemap, geojsonLayer]
 
