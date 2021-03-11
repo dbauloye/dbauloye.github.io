@@ -132,6 +132,13 @@
         }); 
               
        
+       var map = new Map({
+
+          layers: [thebasemap, geojsonLayer]
+
+        });
+
+       
         var featureLayer = new FeatureLayer({
 
           url:"https://gisext.lincoln.ne.gov/arcgis/rest/services/Parks/Park_Boundaries/MapServer/0"
@@ -139,13 +146,6 @@
          });       
        
        
-       var map = new Map({
-
-          layers: [thebasemap, geojsonLayer]
-
-        });
-
-
         var view = new MapView({
 
           container: "viewDiv",
