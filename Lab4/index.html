@@ -36,7 +36,7 @@
 
       require(["esri/Map", "esri/layers/TileLayer", "esri/layers/GeoJSONLayer", "esri/views/MapView", "esri/layers/FeatureLayer", "esri/widgets/Legend"], 
           
-         function(Map, TileLayer, GeoJSONLayer, MapView, Legend, FeatureLayer) {
+         function(Map, TileLayer, GeoJSONLayer, MapView, FeatureLayer, Legend) {
 
            const renderer = {
 
@@ -136,14 +136,7 @@
 
           layers: [thebasemap, geojsonLayer]
 
-        });
-
-       
-        var featureLayer = new FeatureLayer({
-
-          url:"https://gisext.lincoln.ne.gov/arcgis/rest/services/Parks/Park_Boundaries/MapServer/0"
-
-         });       
+        }); 
        
        
         var view = new MapView({
@@ -158,12 +151,27 @@
 
         });
        
+       
+         var featureLayer = new FeatureLayer({
+
+          url:"https://gisext.lincoln.ne.gov/arcgis/rest/services/Parks/Park_Boundaries/MapServer/0"
+
+         });      
+       
+       
          const legend = new Legend({
           
-          view:view,layerInfos: [{
+          view:view,
+          
+          layerInfos: [{
             
-           layer: geojsonLayer,title: "Legend"
-           }]});
+           layer: geojsonLayer,
+           
+           title: "Legend"
+           
+           }]
+         
+         });
         
     
          map.add(featureLayer);
