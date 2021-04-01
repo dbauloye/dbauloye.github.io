@@ -69,7 +69,7 @@
  .projection( albersProjection );
  
   lnk_json.selectAll( "path" )
-    .data( Huntington.features )
+    .data( huntington.features )
     .enter()
     .append( "path" )
     .attr ( "fill", function(d) { return ramp(d.properties.RESYRBLT) })
