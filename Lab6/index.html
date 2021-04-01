@@ -57,6 +57,8 @@
  .attr( “width”, width )
  .attr( “height”, height );
 
+ var lnk_json = svg.append( "g" );
+ 
  var albersProjection = d3.geoAlbers()
  .scale( 2850000 )
  .rotate( [96.6327,0] )
@@ -66,8 +68,6 @@
  var geoPath = d3.geoPath()
  .projection( albersProjection );
  
-  var lnk_json = svg.append( "g" );
-
   lnk_json.selectAll( "path" )
     .data( lnkbldngsjson.features )
     .enter()
