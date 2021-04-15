@@ -92,9 +92,9 @@
 
                 {
 
-                  fieldName: ["mag", "longitude", "latitude"]
+                  fieldName: "mag"
 
-                  label: "Magnitude", "Longitude", "Latitude"
+                  label: "Magnitude"
 
                   format: {
 
@@ -103,8 +103,37 @@
                     digitSeparator: true
 
                   }
+               },
+               {
 
-                }]}]};
+                  fieldName: "longitude"
+
+                  label:"Longitude"
+
+                  format: {
+
+                    places: 0,
+
+                    digitSeparator: true
+
+                  }
+               },
+               {
+
+                  fieldName: "latitude"
+
+                  label: "Latitude"
+
+                  format: {
+
+                    places: 0,
+
+                    digitSeparator: true
+
+                  }
+               }
+
+                ]}]};
      
        const layer = new FeatureLayer({
 
