@@ -59,3 +59,92 @@
     </style>
 
     <script>
+
+    require([
+
+      "esri/Map",
+
+      "esri/views/MapView",
+
+      "esri/layers/FeatureLayer",
+
+      "esri/widgets/TimeSlider",
+
+      "esri/widgets/Legend"
+
+       ], function (Map, MapView, FeatureLayer, TimeSlider, Legend) {
+   
+     
+     
+       const layer = new FeatureLayer({
+
+           url:   "https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/USGS_Seismic_Data_v1/FeatureServer/0"
+
+       });
+       
+     
+     
+       const view = new MapView({
+
+           map: map,
+
+           container: "viewDiv",
+
+           zoom: 2, //zoomed almost all the way out to see the globe
+
+           center: [-150, 0] //set this somewhere in the middle of the Pacific
+
+        });
+     
+     
+        const timeSlider = new TimeSlider({
+
+           container: "timeSlider",
+
+           view: view,
+
+           timeVisible: true, // show the time stamps on the timeslider
+
+           loop: true
+
+         });
+
+ 
+
+         view.whenLayerView(layer).then(function (lv) {
+
+        // this just rounds up the time extent to full hours
+
+         timeSlider.fullTimeExtent = layer.timeInfo.fullTimeExtent.expandTo("hours");
+
+         });
+
+ 
+
+       const legend = new Legend({
+
+        view: view
+
+       });
+
+       
+
+       view.ui.add(legend, "top-left"); //you can position the legend here
+
+   
+
+      });                  
+
+      </script>
+
+      </head>
+ 
+      <body>
+
+       <div id="viewDiv"></div>
+
+       <div id="timeSlider"></div>
+
+      </body>
+
+      </html>
