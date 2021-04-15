@@ -76,9 +76,43 @@
    
      
      
+       const popupTemplate = {
+
+          // autocasts as new PopupTemplate()
+
+          title: "this event took place at {depth} feet deep",
+
+          content: [
+
+            {
+
+              type: "fields",
+
+              fieldInfos: [
+
+                {
+
+                  fieldName: "mag",
+
+                  label: "Magnitude",
+
+                  format: {
+
+                    places: 0,
+
+                    digitSeparator: true
+
+                  }
+
+                }]}]};
+     
        const layer = new FeatureLayer({
 
-           url:   "https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/USGS_Seismic_Data_v1/FeatureServer/0"
+           url:   "https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/USGS_Seismic_Data_v1/FeatureServer/0",
+
+           outFields: ["depth", "mag"], // used to specify what attribute fields to query
+
+           popupTemplate: popupTemplate
 
        });
        
