@@ -76,15 +76,6 @@
    
      
      
-      const map = new Map({
-
-        basemap: "hybrid",
-
-        layers: [layer] //if you add more layers, separate by a comma
-
-       });
-     
-     
        const popupTemplate = {
 
           // autocasts as new PopupTemplate()
@@ -125,6 +116,13 @@
 
        });
        
+      const map = new Map({
+
+        basemap: "hybrid",
+
+        layers: [layer] //if you add more layers, separate by a comma
+
+       });
      
      
        const view = new MapView({
