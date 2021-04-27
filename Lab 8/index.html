@@ -63,13 +63,13 @@ function(WebScene, SceneView, FeatureLayer, SceneLayer, Query) {
 
               longitude: -91.537668,
 
-              z: 290
+              z: 300
 
             },
 
-            tilt: 60,
+            tilt: 50,
 
-            heading: 330
+            heading: 300
 
           },
 
@@ -77,7 +77,7 @@ function(WebScene, SceneView, FeatureLayer, SceneLayer, Query) {
 
             lighting: {
 
-              date: new Date("April 15, 2020 16:00:00 EDT"),
+              date: new Date("July 25, 2020 17:00:00 EDT"),
 
               directShadowsEnabled: true,
 
@@ -99,7 +99,7 @@ function(WebScene, SceneView, FeatureLayer, SceneLayer, Query) {
 
               type: "web-style", // autocasts as new WebStyleSymbol()
 
-              name: "Crataegus",
+              name: "Hawthorn",
 
               styleName: "EsriRealisticTreesStyle"
 
@@ -115,7 +115,7 @@ function(WebScene, SceneView, FeatureLayer, SceneLayer, Query) {
 
               type: "web-style", // autocasts as new WebStyleSymbol()
 
-              name: "Fraxinus",
+              name: "Ash",
 
               styleName: "EsriRealisticTreesStyle"
 
@@ -131,7 +131,7 @@ function(WebScene, SceneView, FeatureLayer, SceneLayer, Query) {
 
               type: "web-style", // autocasts as new WebStyleSymbol()
 
-              name: "Picea",
+              name: "Norway spruce",
 
               styleName: "EsriRealisticTreesStyle"
 
@@ -147,7 +147,7 @@ function(WebScene, SceneView, FeatureLayer, SceneLayer, Query) {
 
               type: "web-style", // autocasts as new WebStyleSymbol()
 
-              name: "Robinia",
+              name: "Honey locust",
 
               styleName: "EsriRealisticTreesStyle"
 
@@ -163,7 +163,7 @@ function(WebScene, SceneView, FeatureLayer, SceneLayer, Query) {
 
               type: "web-style", // autocasts as new WebStyleSymbol()
 
-              name: "Fagus",
+              name: "Beech",
 
               styleName: "EsriRealisticTreesStyle"
 
@@ -179,7 +179,7 @@ function(WebScene, SceneView, FeatureLayer, SceneLayer, Query) {
 
               type: "web-style", // autocasts as new WebStyleSymbol()
 
-              name: "Quercus",
+              name: "Bur oak",
 
               styleName: "EsriRealisticTreesStyle"
 
@@ -195,7 +195,7 @@ function(WebScene, SceneView, FeatureLayer, SceneLayer, Query) {
 
               type: "web-style", // autocasts as new WebStyleSymbol()
 
-              name: "Pinus",
+              name: "Eastern white pine",
 
               styleName: "EsriRealisticTreesStyle"
 
@@ -211,7 +211,7 @@ function(WebScene, SceneView, FeatureLayer, SceneLayer, Query) {
 
               type: "web-style", // autocasts as new WebStyleSymbol()
 
-              name: "Philodendron",
+              name: "Tulip tree",
 
               styleName: "EsriRealisticTreesStyle"
 
@@ -276,28 +276,20 @@ function(WebScene, SceneView, FeatureLayer, SceneLayer, Query) {
 
         });
 
- 
+  var buildLayer = new FeatureLayer({
 
-        map.add(
+          url: "https://maps.facilities.uiowa.edu/arcgis/rest/services/Features/Buildings/MapServer/0"
 
-          vegetationLayer
+        });
+
+        map.addMany(
+
+          vegetationLayer, buildLayer
 
         );
 
 });
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
     </script>
 
   </head>
