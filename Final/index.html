@@ -91,6 +91,7 @@
 
       };             
     
+    
           function style(feature){
 
                 return {
@@ -133,9 +134,9 @@
 
         }
 
-}).addTo(map);
+}).addTo(map).bindPopup('Halsey Village');
         
-                 var bul = L.geoJson(bul,{style:style}).addTo(map);
+                 var bul = L.geoJson(bul,{style:style});
     
          var forest = L.geoJson(forest).addTo(map);
     
