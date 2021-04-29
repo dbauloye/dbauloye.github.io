@@ -130,8 +130,12 @@
     
       var halsey = L.geoJson(halsey).addTo(map);
     L.marker([41.9033, -100.2690]).addTo(map).bindPopup('Halsey Village');
-    var areaIcon
-        
+    var areaIcon = L.icon({
+      iconUrl: 'area tree cover.png',
+      iconSize: [100, 38],
+      iconAnchor: [25, 16]
+    });
+    L.marker([41.829139064497,-100.33052572301], {icon: areaIcon}).addTo(map);    
                  var bul = L.geoJson(bul,{style:style}).bindPopup('Middle Loup River of Upper Loup Rivers');
     
          var forest = L.geoJson(forest, {
