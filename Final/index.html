@@ -82,7 +82,7 @@
                     if (feature.properties) {
 
          var prop = feature.properties;
-         var popup = '<h3>'+prop['NAME']+'</h3>'+'<br>Village ';
+         var popup = '<h3>'+prop['AreaName']+'</h3>'+'<br>, an area of '+prop['Acres']+'<br>acres, where the Nebraska National Forest is located.;
              feature.layer = layer;
 
              layer.bindPopup(popup, {maxWidth: "auto"});
@@ -110,16 +110,55 @@
 
 };      
     
-      var halsey = L.geoJson(halsey,{
-                 
-                 onEachFeature:onEachFeature
+     function style2(feature){
 
-}).addTo(map).bindPopup('Halsey Village');
-    L.marker([41.9033, -100.2690]).addTo(map);
-        
-                 var bul = L.geoJson(bul,{style:style});
+                return {
+
+                    fillColor: 'green',
+
+                    weight: 2,
+
+                    opacity: 1,
+
+                    color: 'black',
+
+                    fillOpacity: 0.9
+
+                };
+
+};      
     
-         var forest = L.geoJson(forest).addTo(map);
+      var halsey = L.geoJson(halsey).addTo(map);
+    L.marker([41.9033, -100.2690]).addTo(map).bindPopup('Halsey Village');
+        
+                 var bul = L.geoJson(bul,{style:style}).bindPopup('Middle Loup River of Upper Loup Rivers');
+    
+         var forest = L.geoJson(forest, {
+           
+                 onEachFeature:onEachFeature,
+           
+                 style:style2,
+                            
+                 pointToLayer: function(feature, ll){
+
+                 return L.circleMarker(ll, {
+
+                        color: '#000000',
+
+                        opacity: 0.8,
+
+                        weight: 2,
+
+                        fillColor: '#916a6a',
+
+                        fillOpacity: .5,
+
+                //radius: 10
+
+                        radius: 3
+
+            });
+                 }}).addTo(map);
     
             var base = {
 
@@ -133,7 +172,7 @@
 
             var over = {
 
-            "Biologically Unique Landscapes": bul
+            "Biologically Unique Landscape": bul
 
 };
             
