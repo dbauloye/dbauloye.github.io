@@ -137,6 +137,7 @@
       iconSize: [500, 238],
       iconAnchor: [25, 16]
     });
+	  
     L.marker([41.829139064497,-100.33052572301], {icon: areaIcon}).addTo(map);    
 	  
 	var halseyFIcon = L.icon({
@@ -144,7 +145,7 @@
       iconSize: [300, 238],
       iconAnchor: [25, 16]
     });
-	 L.marker([41.86015595941419,-100.44585724653322], {icon: areaIcon}).addTo(map).bindPopup('Halsey Forest);	
+	 L.marker([41.86015595941419,-100.44585724653322], {icon: halseyFIcon}).addTo(map).bindPopup('Tree cover in Halsey Forest in 2019');	
 												  
                  var bul = L.geoJson(bul,{style:style}).bindPopup('Middle Loup River of Upper Loup Rivers');
 	  
