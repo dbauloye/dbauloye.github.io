@@ -82,7 +82,7 @@
                     if (feature.properties) {
 
          var prop = feature.properties;
-         var popup = '<h3>' '<br>Bessey Ranger District NF (USFS), an area of '+prop['Acres']+'<br>acres''</h3>'+'<br>The Nebraska National Forest is located here on the border of '+prop['County']+'<br> counties';
+         var popup = '<h3>' '+prop['AreaName']+'</h3>'+'<br>The Nebraska National Forest (also known as Halsey Forest) is located here on the border of the counties of '+prop['County'];
              feature.layer = layer;
 
              layer.bindPopup(popup, {maxWidth: "auto"});
@@ -130,6 +130,7 @@
     
       var halsey = L.geoJson(halsey).addTo(map);
     L.marker([41.9033, -100.2690]).addTo(map).bindPopup('Halsey Village');
+    var areaIcon
         
                  var bul = L.geoJson(bul,{style:style}).bindPopup('Middle Loup River of Upper Loup Rivers');
     
