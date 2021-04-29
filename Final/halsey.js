@@ -1,4 +1,4 @@
-var halsey{
+var halsey={
 "type": "FeatureCollection",
 "name": "halsey",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
