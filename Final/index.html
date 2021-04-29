@@ -112,15 +112,10 @@
     
       var halsey = L.geoJson(halsey,{
                  
-                 onEachFeature:onEachFeature, 
-        
-                 pointToLayer: function(feature, ll){
-
-                 return L.Marker(ll);
-
-        }
+                 onEachFeature:onEachFeature
 
 }).addTo(map).bindPopup('Halsey Village');
+    L.marker([41.9033, -100.2690]).addTo(map);
         
                  var bul = L.geoJson(bul,{style:style});
     
