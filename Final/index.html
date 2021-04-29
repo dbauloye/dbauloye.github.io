@@ -129,6 +129,12 @@
 };      
     
       var halsey = L.geoJson(halsey).addTo(map);
+    L.polygon([
+		[40.819803, -96.703767],
+		[40.819588, -96.703767],
+		[40.819588, -96.703247],
+		[40.819803, -96.703247]
+	]).addTo(mymap).bindPopup("This is the area of Halsey Forest.");
     L.marker([41.9033, -100.2690]).addTo(map).bindPopup('Halsey Village');
     var areaIcon = L.icon({
       iconUrl: 'area tree cover.png',
