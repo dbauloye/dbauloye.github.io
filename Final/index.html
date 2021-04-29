@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Halsey Forest as a Landscape</title>
+  <title>Halsey Forest</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -82,7 +82,7 @@
                     if (feature.properties) {
 
          var prop = feature.properties;
-         var popup = '<h3>'+prop['AreaName']+'</h3>'+'<br>, an area of '+prop['Acres']+'<br>acres, where the Nebraska National Forest is located.;
+         var popup = '<h3>'+prop['AreaName']+'<br>, an area of '+prop['Acres']+'<br>acres'</h3>'+'<br>The Nebraska National Forest is located here on the border of '+prop['County']' counties;
              feature.layer = layer;
 
              layer.bindPopup(popup, {maxWidth: "auto"});
