@@ -82,7 +82,7 @@
                     if (feature.properties) {
 
          var prop = feature.properties;
-         var popup = '<h3>'+prop['AreaName']+'<br>, an area of '+prop['Acres']+'<br>acres'</h3>'+'<br>The Nebraska National Forest is located here on the border of '+prop['County']' counties;
+         var popup = '<h3>' '<br>Bessey Ranger District NF (USFS), an area of '+prop['Acres']+'<br>acres''</h3>'+'<br>The Nebraska National Forest is located here on the border of '+prop['County']+'<br> counties';
              feature.layer = layer;
 
              layer.bindPopup(popup, {maxWidth: "auto"});
