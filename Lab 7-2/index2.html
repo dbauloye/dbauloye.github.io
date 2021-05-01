@@ -221,7 +221,7 @@
 
         title: 'Search',
 
-        placeholder: 'Example: John Smith',
+        placeholder: 'Example: Building',
 
         maxResultLength: 10,
 
@@ -239,7 +239,7 @@
 
           var name = L.DomUtil.create('b', null, container);
 
-          name.innerHTML = props.LNAME;
+          name.innerHTML = props.name;
 
           container.appendChild(L.DomUtil.create('br', null, container));
 
@@ -259,7 +259,7 @@
 
       map.addControl(searchControl);
 
-      searchControl.indexFeatures(brinton_data_lab7, ['LNAME']);
+      searchControl.indexFeatures(brinton_data_lab7, ['name']);
 
  
 
