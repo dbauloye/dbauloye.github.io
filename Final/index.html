@@ -132,6 +132,18 @@
 	  
 	 
     L.marker([41.9033, -100.2690]).addTo(map).bindPopup('Halsey Village');
+
+    var popup = L.popup()
+    
+    function onMapClick(e) {
+popup
+    .setLatLng(e.latlng)
+    .setContent('<a href="https://dbauloye.github.io/Final/area%20tree%20cover.png">Percent tree and Perrenial Forbes Grass Cover in a highly managed area of Halsey (1984-2020)</a>')
+    .openOn(map);
+}
+
+map.on('click', onMapClick);
+    
     var areaIcon = L.icon({
       iconUrl: 'area tree cover.png',
       iconSize: [500, 238],
