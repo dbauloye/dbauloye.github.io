@@ -42,8 +42,7 @@
 </head>
 <body>
   <div id="map"></div>
-  <h1>Halsey Forest and its importance on woody encroachment</h1>
-  <h2>Halsey Forest is an afforestation project by Charles Bessey, which has been one of the instigators of woodland border expansion in Nebraska. It happens to be very close to a historically and ecollogically significant area, which is the middle branches of the Loup River.</h2>
+  <h2></h2>
   <script>
     
       var map = L.map('map',
@@ -131,8 +130,16 @@
 };      
     
       var halsey = L.geoJson(halsey).addTo(map);
+	
+    var marker1 = L.marker([41.1033, -100.3090]).addTo(map);
+
+   marker1.on('click',function(){
+	
+    L.control.window(map,{title: 'Halsey Forest and its importance on woody encroachment'})
+	  .content('Halsey Forest is an afforestation project by Charles Bessey, which has been one of the instigators of woodland border expansion in Nebraska. It happens to be very close to a historically and ecollogically significant area, which is the middle branches of the Loup River.')
+	  .show()
+   });
 	  
-	 
     L.marker([41.9033, -100.2690]).addTo(map).bindPopup('Halsey Village');
 
 	      var areaIcon = L.icon({
