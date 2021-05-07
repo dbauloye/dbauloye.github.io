@@ -1,4 +1,4 @@
-L.Control.Window = L.Control.extend({
+var L.Control.Window = L.Control.extend({
 
     includes: L.Evented.prototype || L.Mixin.Events,
 
