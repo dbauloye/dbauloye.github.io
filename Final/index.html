@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
    crossorigin=""/>
-  <link rel="stylesheet" href="https://dbauloye.github.io/Final/L.Control.Window.css" />
-  <script src="https://dbauloye.github.io/Final/hey.js"></script> 
   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
    crossorigin=""></script>
@@ -130,9 +128,7 @@
                 };
 
 };      
-    var winOpts = L.control.window(map,{title:'Halsey Forest and its importance on woody encroachment',
-		content:'Halsey Forest is an afforestation project by Charles Bessey, which has been one of the instigators of woodland border expansion in Nebraska. It happens to be very close to a historically and ecollogically significant area, which is the middle branches of the Loup River.',
-		visible: true})
+
       var halsey = L.geoJson(halsey).addTo(map);
 	
     const marker1 = L.marker([41.1033, -100.3090]).addTo(map);
